@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServiceTestService } from './service-test.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'nandha';
+  constructor(private service:ServiceTestService){this.service.loger();}
+  ngOnInIt(){
+    console.log("hey");
+    this.service.loger();
+  }
 }
