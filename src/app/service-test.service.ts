@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AppComponent } from './app.component';
+import { ChildServiceService } from './child-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +14,11 @@ export class ServiceTestService {
       console.log(response);
     });
     console.log("I m come from service");
+  }
+  jwt(){
+    this.http.get("https://w9oc5.sse.codesandbox.io/getToken").subscribe((res)=>{
+      console.log(res);
+
+    })
   }
 }
